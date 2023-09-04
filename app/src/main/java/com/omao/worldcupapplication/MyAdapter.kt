@@ -77,6 +77,7 @@ class MyAdapter(private var activity: Activity, private var items: ArrayList<Cou
 
         var countries = items[position]
         viewHolder.tvName?.text = countries.name
+        viewHolder.tvCupTimes?.text = countries.cupWins
         viewHolder.flagImage?.setImageResource(countries.flagImage)
 
         return view as View
