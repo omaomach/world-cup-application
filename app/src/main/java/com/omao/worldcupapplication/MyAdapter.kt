@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
@@ -79,6 +80,13 @@ class MyAdapter(private var activity: Activity, private var items: ArrayList<Cou
         viewHolder.tvName?.text = countries.name
         viewHolder.tvCupTimes?.text = countries.cupWins
         viewHolder.flagImage?.setImageResource(countries.flagImage)
+
+        view?.setOnClickListener() {
+            Toast.makeText(activity,
+                "You chose: ${countries.name}",
+                Toast.LENGTH_LONG,
+                ).show()
+        }
 
         return view as View
 
